@@ -13,24 +13,24 @@ var userSchema = mongoose.Schema({
 	course: String
 });
 
-// Hash the password before the user is saved
+// Passa a senha para o hash antes que o usuario seja salvo
 userSchema.pre('save', function(next) {
 	var user = this;
 
-	// Hash the password only if the password has been changed or user is new
+	// Passa a senha para o hash apenas se a senha foi modificada ou se é um usuario novo
 	if (!user.isModified('password')) return next();
 
-	// generate the hash
+	// gera o hash
 	bcrypt.hash(user.password, null, null, function(err, hash) {
 		if (err) return next(err);
 
-		// change the password to the hashed version
+		// Muda a senha para o formato em hash
 		user.password = hash;
 		next();
 	});
 });
 
-// Method to compare a given password with the database hash
+// Metodo para comparar uma dada senha com o hash do banco de dados
 userSchema.methods.comparePassword = function(password) {
 	var user = this;
 	return bcrypt.compareSync(password, user.password);

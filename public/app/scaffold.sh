@@ -1,11 +1,11 @@
 #!/bin/bash
 
 usage() {
-    echo "Usage: "
-    echo "  $0 <component-name>"
+    echo "Uso: "
+    echo "  $0 <nome-do-componente>"
     echo "  E.g.: $0 home.public"
     echo ""
-    echo "This will create the basic structure for the MEAN component."
+    echo "Isso ira criar a estrutura basica para o componente do MEAN."
     exit 0
 }
 

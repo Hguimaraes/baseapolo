@@ -1,27 +1,27 @@
 var LocalStrategy   = require('passport-local').Strategy;
 var User            = require('../app/models/user');
 
-// expose this function to our app using module.exports
+// Exportar esta função para nosso aplicativo usando module.exports
 module.exports = function(passport) {
 
-    // used to serialize the user for the session
+    // Usado para serializar o usuario para sua sessão
     passport.serializeUser(function(user, done) {
         done(null, user.id);
     });
 
-    // used to deserialize the user
+    // Usado para desserializar o usuario
     passport.deserializeUser(function(id, done) {
         User.findById(id, function(err, user) {
             done(err, user);
         });
     });
 
-    // Local Signup
+    // Inscrição local
 	passport.use('local-signup', new LocalStrategy({
-		nameField: 'name'
+		nameField: 'nome'
 		usernameField : 'email',
-		passwordField : 'password',
-		courseField: 'course',
+		passwordField : 'senha',
+		courseField: 'curso',
 		passReqToCallback : true
 	},
 	function(req,name, email, password, course, done) {
