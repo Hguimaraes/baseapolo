@@ -1,11 +1,9 @@
 {
-    "name": "baseapolo",
-    "dependencies": {
-        "bootstrap": "latest",
-        "font-awesome": "latest",
-        "angular": "latest",
-        "angular-animate" : "latest",
-        "angular-ui-router": "latest",
-        "angular-bootstrap" : "latest"
-    }
+  "name": "baseapolo",
+  "dependencies": {
+    "angular": "latest",
+    "angular-animate": "latest",
+    "angular-ui-router": "latest",
+    "Materialize": "materialize#~0.97.5"
+  }
 }
