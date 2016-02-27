@@ -1,0 +1,20 @@
+<div id="navbar" class="navbar-fixed scrollspy">
+    <nav class="light-blue">
+        <div class="nav-wrapper">
+            <a href="#navbar" class="brand-logo">Logo</a>
+            <a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a ui-sref="root.home" ng-if="!state.isHome()">Início</a></li>
+                <li><a href="#about" ng-if="state.isHome()">Sobre</a></li>
+                <li><a href="#register" ng-if="state.isHome()">Cadastre-se</a></li>
+                <li><a ui-sref="root.login">Entrar</a></li>
+            </ul>
+            <ul class="side-nav" id="side-nav">
+                <li><a ui-sref="root.home" ng-if="!state.isHome()">Início</a></li>
+                <li><a href="#about" ng-if="state.isHome()">Sobre</a></li>
+                <li><a href="#register" ng-if="state.isHome()">Cadastre-se</a></li>
+                <li><a ui-sref="root.login">Entrar</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

@@ -1,2 +1,3 @@
 angular.module('baseapolo', [
-	'ui.router'])
+	'ui.router',
+    'ngMaterialize'])
