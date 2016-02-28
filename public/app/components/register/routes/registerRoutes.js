@@ -1,14 +1,15 @@
 angular.module('baseapolo')
     .config(
         function ($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider) {
-            console.log("login route");
-
+            console.log("register route");
+            
             $stateProvider
-                .state('root.login', {
-                    url: '/login',
+                .state('root.register', {
+                    url: '/register',
+                    controller: 'registerCtrl',
                     views: {
                         '@': {
-                            templateUrl: './app/components/login/views/login.html'
+                            templateUrl: './app/components/register/views/register.html'
                         },
                         'footer@': {
                             template: ''

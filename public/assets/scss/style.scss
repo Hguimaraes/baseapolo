@@ -1,9 +1,11 @@
 @import "../libs/Materialize/sass/components/_color";
 @import "color";
 @import "text";
+@import "register";
 @import "home";
 @import "navbar";
 
 html,
 body {
+    min-height: 100vh;
 }

@@ -210,7 +210,7 @@ angular.module('baseapolo')
                             templateUrl: './app/components/home/views/about.html'
                         },
                         'register@root.home': {
-                            templateUrl: './app/components/home/views/register.html'
+                            templateUrl: './app/components/register/views/register.html'
                         }
                     }
                 })
@@ -227,6 +227,35 @@ angular.module('baseapolo')
                     views: {
                         '@': {
                             templateUrl: './app/components/login/views/login.html'
+                        },
+                        'footer@': {
+                            template: ''
+                        }
+                    }
+                })
+        }]);
+
+angular.module('baseapolo').controller('registerCtrl', ['$scope', function ($scope) {
+
+    console.log("registerCtrl");
+}]);
+
+
+angular.module('baseapolo')
+    .config(
+        ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$urlMatcherFactoryProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider) {
+            console.log("register route");
+            
+            $stateProvider
+                .state('root.register', {
+                    url: '/register',
+                    controller: 'registerCtrl',
+                    views: {
+                        '@': {
+                            templateUrl: './app/components/register/views/register.html'
+                        },
+                        'footer@': {
+                            template: ''
                         }
                     }
                 })

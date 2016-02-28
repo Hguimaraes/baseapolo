@@ -18,7 +18,7 @@ angular.module('baseapolo')
                             templateUrl: './app/components/home/views/about.html'
                         },
                         'register@root.home': {
-                            templateUrl: './app/components/home/views/register.html'
+                            templateUrl: './app/components/register/views/register.html'
                         }
                     }
                 })

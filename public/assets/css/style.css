@@ -1630,11 +1630,6 @@
 .primary-color-dark-text {
   color: #0D47A1 !important; }
 
-#about #about-description {
-  margin-bottom: 1em; }
-#about #about-description {
-  margin-top: 1.5em; }
-
 #register {
   /* label color */
   /* label focus color */
@@ -1651,5 +1646,14 @@
     border-bottom: 1px solid #1E88E5;
     box-shadow: 0 1px 0 0 #1E88E5; }
 
+#about #about-description {
+  margin-bottom: 1em; }
+#about #about-description {
+  margin-top: 1.5em; }
+
 #navbar .brand-logo {
   height: 100%; }
+
+html,
+body {
+  min-height: 100vh; }
