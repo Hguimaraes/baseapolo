@@ -40,3 +40,7 @@ node_modules
 
 # Diretorio usado pelo sass
 .sass-cache
+
+# Arquivos gerados
+/public/app.js
+/public/assets/css/style.css
