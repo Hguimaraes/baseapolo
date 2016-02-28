@@ -22,6 +22,9 @@ angular.module('baseapolo')
                         'navbar': {
                             templateUrl: './app/shared/navbar/views/navbar.html',
                             controller: 'navbarCtrl'
+                        },
+                        'footer': {
+                            templateUrl: './app/shared/footer/views/footer.html'
                         }
                     }
                 })
