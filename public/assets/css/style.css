@@ -1635,5 +1635,21 @@
 #about #about-description {
   margin-top: 1.5em; }
 
+#register {
+  /* label color */
+  /* label focus color */
+  /* label underline focus color */
+  /* valid color */
+  /* invalid color */
+  /* icon prefix focus color */ }
+  #register .input-field input:focus + label {
+    color: #1E88E5; }
+  #register .input-field input:focus {
+    border-bottom: 1px solid #1E88E5;
+    box-shadow: 0 1px 0 0 #1E88E5; }
+  #register .input-field input.valid {
+    border-bottom: 1px solid #1E88E5;
+    box-shadow: 0 1px 0 0 #1E88E5; }
+
 #navbar .brand-logo {
   height: 100%; }
