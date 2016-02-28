@@ -8,6 +8,8 @@ BaseApolo is an academic opportunity manager at the Federal University of Rio de
 ### Linux
 * *Node.js* - <a href="http://nodejs.org/download/">Download</a> and Install Node.js.
 * *MongoDB* - <a href="https://www.mongodb.org/downloads">Download</a> and Install mongodb.
+* *Gulp* - <a href="http://gulpjs.com/">Download</a> and Install Gulp.
+* *Sass* - <a href="http://sass-lang.com/">Download</a> and Install Sass.
 
 If you're using ubuntu, this is the preferred repository to use...
 
@@ -25,6 +27,7 @@ $ sudo apt-get install nodejs
 $ git clone https://github.com/Hguimaraes/baseapolo
 $ cd baseapolo && npm install
 $ bower install
+$ gulp build-dev
 ```
 
 ### Edit your env variables
@@ -33,6 +36,7 @@ You need to create an .env file in root directory and set the following variable
 ```bash
 DB_HOST=
 PORT= (Optional)
+SECRET= 
 ```
 
 ### Invoke node with a task manager
@@ -45,11 +49,13 @@ Then, open a browser and go to:
 ```bash
 http://localhost:3000
 ```
+To develop, use gulp to watch for file changes
+```bash
+$ gulp
+```
 
 ## Technologies
 
 ### Additional Tools
 * <a href="http://mongoosejs.com/">Mongoose</a> - The mongodb node.js driver in charge of providing elegant mongodb object modeling for node.js
 * <a href="http://passportjs.org/">Passport</a> - An authentication middleware for Node.js which supports authentication using a username and password, Facebook, Twitter, and more.
-* <a href="http://getbootstrap.com/">Twitter Bootstrap</a> - The most popular HTML, CSS, and JS framework for developing responsive, mobile first projects.
-* <a href="http://angular-ui.github.io/bootstrap/">UI Bootstrap</a> - Bootstrap components written in pure AngularJS
