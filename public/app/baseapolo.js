@@ -1,3 +1,4 @@
 angular.module('baseapolo', [
 	'ui.router',
-    'ngMaterialize'])
+    'ngMaterialize',
+    'vh'])

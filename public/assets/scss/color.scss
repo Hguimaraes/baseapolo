@@ -1,0 +1,18 @@
+$primary-color: color("blue", "darken-1");
+$primary-color-dark: color("blue", "darken-4");
+
+.primary-color {
+    background-color: $primary-color !important;
+}
+
+.primary-color-text {
+    color: $primary-color !important;
+}
+
+.primary-color-dark {
+    background-color: $primary-color-dark !important;
+}
+
+.primary-color-dark-text {
+    color: $primary-color-dark !important;
+}

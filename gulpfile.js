@@ -52,7 +52,7 @@ gulp.task('nodemon', function (cb) {
 });
 
 gulp.task('watch', function() {
-    gulp.watch("./public/assets/scss/*.scss", ['sass']);
+    gulp.watch("public/assets/scss/*.scss", ['sass']);
     gulp.watch("public/assets/js/*.js", ['js']);
     gulp.watch("public/app/**/*.js", ['js']);
 });

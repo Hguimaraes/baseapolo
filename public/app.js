@@ -1,6 +1,7 @@
 angular.module('baseapolo', [
 	'ui.router',
-    'ngMaterialize'])
+    'ngMaterialize',
+    'vh'])
 angular.module('baseapolo')
     .config(
         ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$urlMatcherFactoryProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider) {
@@ -146,35 +147,41 @@ angular.module('ngMaterialize').directive('nav', function () {
     }
   };
 });
-'use strict';
+angular.module('vh', [])
+  .directive('vh', ['$window', function ($window) {
+    return {
+      template: "",
+      restrict: 'A',
+      controller: ['$window', function ($window) {
+        this.target = '';
+        this.height = '';
+        this.orientation = 0;
 
-angular.module('baseapolo').controller('courseCtrl',
-    ['$scope', '$location', function ($scope, $location) {
+        this.resize = function () {
+          var new_height = this.height / 100.0 * $window.innerHeight;
+          this.target.css('min-height', new_height);
+        };
+      }],
 
-        $scope.courses = [
-            'Engenharia Ambiental',
-            'Engenharia Civil',
-            'Engenharia-Básico',
-            'Engenharia de Computação e Informação',
-            'Engenharia de Controle e Automação',
-            'Engenharia de Materiais',
-            'Engenharia de Petróleo',
-            'Engenharia de Produção',
-            'Engenharia Eletrônica e de Computação',
-            'Engenharia Elétrica',
-            'Engenharia Mecânica',
-            'Engenharia Metalúrgica',
-            'Engenharia Naval e Oceânica',
-            'Engenharia Nuclear'];
+      link: function postLink(scope, elem, attrs, controller) {
+        controller.target = angular.element(elem[0]);
+        controller.height = attrs.vh;
+        controller.resize();
 
-        $scope.course = $scope.courses[0];
+        scope.handleSizes = function () {
+          var
+            h = $window.innerHeight,
+            w = $window.innerWidth;
 
-        $scope.update = function (item) {
-            $scope.course = item;
-        }
-        console.log("courseCtrl");
-    }]);
-
+          if ((h > w && controller.orientation) || (h < w && !controller.orientation)) {
+            controller.orientation = !controller.orientation;
+            controller.resize();
+          }
+        };
+        angular.element($window).on('resize', scope.handleSizes);
+      }
+    };
+  }]);
 angular.module('baseapolo').controller('homeCtrl', ['$scope', function ($scope) {
 
     console.log("homeCtrl");
