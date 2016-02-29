@@ -1,11 +1,21 @@
 angular.module('baseapolo')
     .config(
-        function ($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider) {
+        function ($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider, authProvider) {
             console.log("home route");
+            var url = '/';
+            
+            $urlRouterProvider.when(url, function($state) {
+                // If the user is authenticated, redirect to user home
+                if (authProvider.isLoggedIn()) {
+                    $state.transitionTo('root.userHome');
+                    return true;
+                }
+                return false;
+            });
             
             $stateProvider
                 .state('root.home', {
-                    url: '/',
+                    url: url,
                     controller: 'homeCtrl',
                     views: {
                         '@': {

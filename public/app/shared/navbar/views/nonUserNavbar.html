@@ -1,17 +1,17 @@
-<div id="navbar" class="navbar-fixed scrollspy">
+<div id="non-user-navbar" class="navbar-fixed scrollspy">
     <nav class="primary-color">
         <div class="nav-wrapper">
-            <a href="#navbar">
+            <a href="#non-user-navbar">
                 <img class="brand-logo" src="assets/imgs/logo.png" alt="">
             </a>
-            <a href="#" data-activates="side-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" data-activates="side-non-user-nav" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a ui-sref="root.home" ng-if="!state.isHome()">Início</a></li>
                 <li><a href="#about" ng-if="state.isHome()">Sobre</a></li>
                 <li><a href="#register" ng-if="state.isHome()">Cadastre-se</a></li>
                 <li><a ui-sref="root.login" ng-if="!state.isLogin()">Entrar</a></li>
             </ul>
-            <ul class="side-nav" id="side-nav">
+            <ul class="side-nav" id="side-non-user-nav">
                 <li class="no-padding"><a ui-sref="root.home" ng-if="!state.isHome()">Início</a></li>
                 <li class="no-padding"><a href="#about" ng-if="state.isHome()">Sobre</a></li>
                 <li class="no-padding"><a href="#register" ng-if="state.isHome()">Cadastre-se</a></li>

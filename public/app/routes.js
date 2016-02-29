@@ -1,7 +1,17 @@
 angular.module('baseapolo')
     .config(
-        function ($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider) {
+        function ($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider, authProvider) {
             console.log("route base");
+            
+            // console.log(auth);
+            
+            function getNavBarTemplateUrl() {
+                if (authProvider.isLoggedIn()) {
+                    return './app/shared/navbar/views/userNavbar.html';
+                } else {
+                    return './app/shared/navbar/views/nonUserNavbar.html';
+                }
+            }
             
             // For any unmatched url, send to /
             $urlRouterProvider.otherwise("/");
@@ -16,8 +26,13 @@ angular.module('baseapolo')
                     abstract: true,
                     views: {
                         'navbar': {
-                            templateUrl: './app/shared/navbar/views/navbar.html',
-                            controller: 'navbarCtrl'
+                            templateUrl: getNavBarTemplateUrl(),
+                            controller: 'navbarCtrl',
+                            resolve: {
+                                user: function () {
+                                    return authProvider.getUser();
+                                }
+                            }
                         },
                         'footer': {
                             templateUrl: './app/shared/footer/views/footer.html'

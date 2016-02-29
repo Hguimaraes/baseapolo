@@ -1,0 +1,18 @@
+<div id="user-navbar" class="navbar-fixed scrollspy">
+    <nav class="primary-color">
+        <div class="nav-wrapper">
+            <a href="#user-navbar">
+                <img class="brand-logo" src="assets/imgs/logo.png" alt="">
+            </a>
+            <a href="#" data-activates="side-user-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a ui-sref="root.home" ng-if="!state.isHome()">Início</a></li>
+                <li><a ui-sref="root.account">Minha Conta</a></li>
+            </ul>
+            <ul class="side-nav" id="side-user-nav">
+                <li class="no-padding"><a ui-sref="root.home" ng-if="!state.isHome()">Início</a></li>
+                <li class="no-padding"><a ui-sref="root.account">Minha Conta</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

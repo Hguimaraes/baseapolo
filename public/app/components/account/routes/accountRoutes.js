@@ -1,13 +1,12 @@
 angular.module('baseapolo')
     .config(
         function ($stateProvider, $urlRouterProvider, $locationProvider, $urlMatcherFactoryProvider, authProvider) {
-            console.log("register route");
-            
-            var url = '/register';
+            console.log("account route");
+            var url = '/account';
             
             $urlRouterProvider.when(url, function($state) {
-                // If the user is authenticated, redirect to home
-                if (authProvider.isLoggedIn()) {
+                // If the user is not authenticated, redirect to home
+                if (!authProvider.isLoggedIn()) {
                     $state.transitionTo('root.home');
                     return true;
                 }
@@ -15,15 +14,12 @@ angular.module('baseapolo')
             });
             
             $stateProvider
-                .state('root.register', {
+                .state('root.account', {
                     url: url,
-                    controller: 'registerCtrl',
+                    controller: 'accountCtrl',
                     views: {
                         '@': {
-                            templateUrl: './app/components/register/views/register.html'
-                        },
-                        'footer@': {
-                            template: ''
+                            templateUrl: './app/components/account/views/account.html'
                         }
                     }
                 })
