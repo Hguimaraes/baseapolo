@@ -17,10 +17,18 @@ angular.module('baseapolo')
             $stateProvider
                 .state('root.userHome', {
                     url: url,
-                    controller: 'userHomeCtrl',
                     views: {
                         '@': {
-                            templateUrl: './app/components/userHome/views/userHome.html'
+                            templateUrl: './app/components/userHome/views/userHome.html',
+                            controller: 'userHomeCtrl'
+                        },
+                        'news@root.userHome': {
+                            templateUrl: './app/components/userHome/views/news.html'
+                        }
+                    },
+                    resolve: {
+                        user: function () {
+                            return authProvider.getUser();
                         }
                     }
                 })

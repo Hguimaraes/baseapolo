@@ -1,12 +1,11 @@
-angular.module('baseapolo').controller('navbarCtrl', function ($scope, $state, user) {
+angular.module('baseapolo').controller('navbarCtrl', function ($scope, $state, userAPI) {
 
     console.log("navbarCtrl");
 
-    console.log('user = ' + user);
+    $scope.user = userAPI;
 
     $scope.state = {
         isHome: function () { return $state.is('root.home') },
-        isLogin: function () { return $state.is('root.login') },
-        isLoggedIn: function () { return !!user }
+        isLogin: function () { return $state.is('root.login') }
     }
 });

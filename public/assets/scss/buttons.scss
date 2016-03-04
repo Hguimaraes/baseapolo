@@ -1,0 +1,18 @@
+$icon-default-color: color("grey", "darken-3");
+$icon-active-color: color("yellow", "darken-1");
+
+.btn {
+    &.btn-star {
+        background-color: transparent;
+        i {
+            color: $icon-default-color;
+            
+        }
+        &.active {
+            background-color: transparent;
+            i {
+                color: $icon-active-color;
+            }
+        }
+    }
+}

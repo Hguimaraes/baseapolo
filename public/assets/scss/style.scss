@@ -4,8 +4,10 @@
 @import "register";
 @import "home";
 @import "navbar";
+@import "buttons";
 
 html,
 body {
+    background-color: color('grey', 'lighten-5');
     min-height: 100vh;
 }

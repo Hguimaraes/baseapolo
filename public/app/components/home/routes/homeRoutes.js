@@ -13,13 +13,15 @@ angular.module('baseapolo')
                 return false;
             });
             
+            console.log(authProvider);
+            
             $stateProvider
                 .state('root.home', {
                     url: url,
-                    controller: 'homeCtrl',
                     views: {
                         '@': {
-                            templateUrl: './app/components/home/views/home.html'
+                            templateUrl: './app/components/home/views/home.html',
+                            controller: 'homeCtrl'
                         },
                         'top@root.home': {
                             templateUrl: './app/components/home/views/top.html'

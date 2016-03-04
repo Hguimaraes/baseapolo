@@ -1,6 +1,6 @@
 angular.module('baseapolo').provider('auth', function () {
-    var _user;
-    // var _user = {};
+    // var _user;
+    var _user = {};
 
     this.getUser = function () {
         return _user;
