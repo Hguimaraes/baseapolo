@@ -6,8 +6,9 @@ angular.module('baseapolo').directive('opportunityCard', function () {
             content: '@',
             title: '@',
             author: '@',
-            counter: '@',
-            onStarClick: "="
+            stars: '@',
+            onStarClick: '=',
+            newsId: '@'
         }
     };
 });

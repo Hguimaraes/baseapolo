@@ -3,13 +3,14 @@ angular.module("baseapolo").directive('starButton', function () {
         restrict: 'E',
         templateUrl: './app/common/directives/starButtonView.html',
         scope: {
-            onStarClick:"="
+            onStarClick: '=',
+            newsId: '@'
         },
         link: function(scope, element, attrs) {
             scope.button = element.find("button");
             element.bind('click', function() {
                 scope.button.toggleClass("active");
-                scope.onStarClick.call();
+                scope.onStarClick(scope.newsId);
             });
         }
     };

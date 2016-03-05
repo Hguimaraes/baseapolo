@@ -27,12 +27,7 @@ angular.module('baseapolo')
                     views: {
                         'navbar': {
                             templateUrl: getNavBarTemplateUrl(),
-                            controller: 'navbarCtrl',
-                            resolve: {
-                                user: function () {
-                                    return authProvider.getUser();
-                                }
-                            }
+                            controller: 'navbarCtrl'
                         },
                         'footer': {
                             templateUrl: './app/shared/footer/views/footer.html'

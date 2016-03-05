@@ -13,8 +13,6 @@ angular.module('baseapolo')
                 return false;
             });
             
-            console.log(authProvider);
-            
             $stateProvider
                 .state('root.home', {
                     url: url,

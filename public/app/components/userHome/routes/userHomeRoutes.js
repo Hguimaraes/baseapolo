@@ -25,11 +25,6 @@ angular.module('baseapolo')
                         'news@root.userHome': {
                             templateUrl: './app/components/userHome/views/news.html'
                         }
-                    },
-                    resolve: {
-                        user: function () {
-                            return authProvider.getUser();
-                        }
                     }
                 })
         });
