@@ -6,7 +6,7 @@ angular.module('baseapolo')
             // console.log(auth);
             
             function getNavBarTemplateUrl() {
-                if (authProvider.isLoggedIn()) {
+                if (authProvider.isAuthenticated()) {
                     return './app/shared/navbar/views/userNavbar.html';
                 } else {
                     return './app/shared/navbar/views/nonUserNavbar.html';

@@ -6,7 +6,7 @@ angular.module('baseapolo')
             
             $urlRouterProvider.when(url, function($state) {
                 // If the user is authenticated, redirect to user home
-                if (authProvider.isLoggedIn()) {
+                if (authProvider.isAuthenticated()) {
                     $state.transitionTo('root.userHome');
                     return true;
                 }

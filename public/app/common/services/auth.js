@@ -1,12 +1,13 @@
 angular.module('baseapolo').provider('auth', function () {
-    this.isLoggedIn = function () {
+    this.isAuthenticated = function () {
         // Request the server if the user if logged in
         return true;
     }
 
     this.$get = function () {
+        var that = this;
         return {
-            isLoggedIn: isLoggedIn
+            isAuthenticated: that.isAuthenticated
         };
     };
 });
