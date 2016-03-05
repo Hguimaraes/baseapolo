@@ -24,6 +24,9 @@ angular.module('baseapolo')
                         },
                         'news@root.userHome': {
                             templateUrl: './app/components/userHome/views/news.html'
+                        },
+                        'categories@root.userHome': {
+                            templateUrl: './app/components/userHome/views/categories.html'
                         }
                     }
                 })

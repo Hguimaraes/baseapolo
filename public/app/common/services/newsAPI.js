@@ -16,7 +16,8 @@ angular.module('baseapolo').factory('newsAPI', function () {
                     'e@email.com'
                 ],
                 starCounter: 5,
-                creationDate: new Date()
+                creationDate: new Date(),
+                category: "Engenharia Eletrônica"
             },
             {
                 _id: '42',
@@ -31,10 +32,26 @@ angular.module('baseapolo').factory('newsAPI', function () {
                     'c@email.com'
                 ],
                 starCounter: 3,
-                creationDate: new Date()
+                creationDate: new Date(),
+                category: "Engenharia de Computação"
             }
         ]
     };
+    
+    newsAPI.getCategories = function () {
+        return [
+            "Engenharia de Computação",
+            "Engenharia Eletrônica",
+            "Engenharia Elétrica",
+            "Engenharia Mecânica",
+            "Engenharia Metalúrgica",
+            "Engenharia Naval",
+            "Engenharia Ambiental",
+            "Engenharia de Produção",
+            "Engenharia Química",
+            "Engenharia de Controle e Automação"
+        ]
+    }
 
     return newsAPI;
 });

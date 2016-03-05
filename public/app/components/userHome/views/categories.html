@@ -1,0 +1,4 @@
+<a id="user-home-dropdown" class='col s12 dropdown-button btn white grey-text' href='#' data-activates='dropdown1'>{{current_category_text}}</a>
+<ul id='dropdown1' class='dropdown-content'>
+    <li ng-repeat="category in categories" ng-click="selectCategory(category)"><a href="#">{{category}}</a></li>
+</ul>

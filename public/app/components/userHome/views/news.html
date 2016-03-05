@@ -1,10 +1,8 @@
-<div class="section container">
-    <div class="row">
-        <div ng-repeat="newsObj in news | orderBy: 'creationDate' | filter: filter">
-            <opportunity-card id="{{getCardId(newsObj._id)}}" class="col s12 m6 l4" on-star-click="handleStar" news-id="{{newsObj._id}}"
-            title="{{newsObj.title}}" author="{{newsObj.author}}" content="{{newsObj.content}}" stars='{{newsObj.starCounter}}'>
-            </opportunity-card>
-            {{initStar(newsObj._id)}}
-        </div>
+<div class="row">
+    <div ng-repeat="newsObj in news | orderBy: 'creationDate' | filter: filter | filter : current_category">
+        <opportunity-card id="{{getCardId(newsObj._id)}}" class="col s12 m6 l4" on-star-click="handleStar" news-id="{{newsObj._id}}"
+        title="{{newsObj.title}}" author="{{newsObj.author}}" content="{{newsObj.content}}" stars='{{newsObj.starCounter}}'>
+        </opportunity-card>
+        {{initStar(newsObj._id)}}
     </div>
 </div>
