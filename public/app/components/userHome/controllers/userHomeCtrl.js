@@ -30,6 +30,8 @@ angular.module('baseapolo').controller('userHomeCtrl', function ($scope, userAPI
         }
 
     }
+    
+    $scope.filter = '';
 
     console.log("userHomeCtrl");
 });
