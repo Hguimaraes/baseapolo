@@ -1,5 +1,8 @@
 $primary-color: color("blue", "darken-1");
 $primary-color-dark: color("blue", "darken-4");
+$secondary-color : color("orange", "darken-1");
+$secondary-color-dark : color("orange", "darken-4");
+$background-color: color('grey', 'lighten-5');
 
 .primary-color {
     background-color: $primary-color !important;
@@ -15,4 +18,19 @@ $primary-color-dark: color("blue", "darken-4");
 
 .primary-color-dark-text {
     color: $primary-color-dark !important;
+}
+.secondary-color {
+    background-color: $secondary-color !important;
+}
+
+.secondary-color-text {
+    color: $secondary-color !important;
+}
+
+.secondary-color-dark {
+    background-color: $secondary-color-dark !important;
+}
+
+.secondary-color-dark-text {
+    color: $secondary-color-dark !important;
 }

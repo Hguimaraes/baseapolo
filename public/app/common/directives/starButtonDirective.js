@@ -10,7 +10,9 @@ angular.module("baseapolo").directive('starButton', function () {
             scope.button = element.find("button");
             element.bind('click', function() {
                 scope.button.toggleClass("active");
-                scope.onStarClick(scope.newsId);
+                if (scope.onStarClick) {
+                    scope.onStarClick(scope.newsId);
+                }
             });
         }
     };

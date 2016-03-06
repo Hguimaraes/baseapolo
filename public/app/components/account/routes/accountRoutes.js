@@ -16,10 +16,19 @@ angular.module('baseapolo')
             $stateProvider
                 .state('root.account', {
                     url: url,
-                    controller: 'accountCtrl',
                     views: {
                         '@': {
-                            templateUrl: './app/components/account/views/account.html'
+                            templateUrl: './app/components/account/views/account.html',
+                            controller: 'accountCtrl'
+                        },
+                        'user@root.account': {
+                            templateUrl: './app/components/account/views/user.html',
+                        },
+                        'stars@root.account': {
+                            templateUrl: './app/components/account/views/stars.html',
+                        },
+                        'creations@root.account': {
+                            templateUrl: './app/components/account/views/creations.html',
                         }
                     }
                 })

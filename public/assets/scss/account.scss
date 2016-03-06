@@ -1,0 +1,14 @@
+#account {
+    .tabs {
+        margin-bottom: 1em;
+        .tab {
+            a {
+                background-color: $background-color;
+                color : $primary-color;
+            }
+        }
+        .indicator {
+            background-color: $primary-color;
+        }
+    }
+}
