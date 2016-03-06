@@ -40,7 +40,7 @@ angular.module('baseapolo').factory('newsAPI', function () {
             ]
         } else {
             // Get the news from the ids
-             return [
+            return [
                 {
                     _id: '1',
                     title: 'Title',
@@ -59,7 +59,26 @@ angular.module('baseapolo').factory('newsAPI', function () {
                 }];
         }
     };
-    
+
+    newsAPI.getNewsById = function (id) {
+        return {
+            _id: id,
+            title: 'Title',
+            author: 'Author',
+            content: 'Content',
+            stars: [
+                'a@email.com',
+                'b@email.com',
+                'c@email.com',
+                'd@email.com',
+                'e@email.com'
+            ],
+            starCounter: 5,
+            creationDate: new Date(),
+            category: "Engenharia Eletrônica"
+        };
+    }
+
     newsAPI.getCategories = function () {
         return [
             "Engenharia de Computação",
@@ -75,7 +94,7 @@ angular.module('baseapolo').factory('newsAPI', function () {
             "Outro"
         ]
     };
-    
+
     newsAPI.createNews = function (news) {
         // Send the news to the server
         console.log("creating " + news);

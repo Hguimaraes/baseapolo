@@ -20,7 +20,12 @@ angular.module('baseapolo')
                     views: {
                         '@': {
                             templateUrl: './app/components/opportunity/views/opportunity.html',
-                            controller: 'opportunityCtrl'
+                            controller: 'opportunityCtrl',
+                            resolve: {
+                                newsId: function ($stateParams) {
+                                    return $stateParams.id;
+                                }
+                            }
                         }
                     }
                 })
