@@ -98,7 +98,13 @@ angular.module('baseapolo').factory('newsAPI', function () {
     newsAPI.createNews = function (news) {
         // Send the news to the server
         console.log("creating " + news);
+    };
+    
+    newsAPI.deleteNews = function (id) {
+        // Send the delete request
+        console.log("deleting " + id);
     }
+    
 
     return newsAPI;
 });

@@ -8,6 +8,11 @@
                     <h5 class="light">Interessados ({{news.starCounter}})</h5>
                     <p class="opportunity-email-list" ng-repeat="email in emails">{{email}}</p>
                 </div>
+                <div class="card-action center">
+                    <button class="btn waves-effect waves-light red white-text" type="submit" name="action" ng-click="delete()">
+                        Deletar
+                    </button>
+                </div>
             </div>
         </div>
     </div>
