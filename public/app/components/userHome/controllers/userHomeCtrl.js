@@ -1,6 +1,5 @@
 angular.module('baseapolo').controller('userHomeCtrl', function ($scope, userAPI, newsAPI) {
 
-    $scope.user = userAPI;
     $scope.news = newsAPI.getNews();
     $scope.categories = newsAPI.getCategories();
     $scope.categories.push("");
@@ -15,9 +14,9 @@ angular.module('baseapolo').controller('userHomeCtrl', function ($scope, userAPI
 
     $scope.handleStar = function (news_id) {
         if (getBtnElem(news_id).hasClass('active')) {
-            $scope.user.setStar(news_id);
+            userAPI.setStar(news_id);
         } else {
-            $scope.user.unStar(news_id);
+            userAPI.unStar(news_id);
         }
     }
 
@@ -28,7 +27,7 @@ angular.module('baseapolo').controller('userHomeCtrl', function ($scope, userAPI
     $scope.initStar = function (news_id) {
         // If the user has starred the news, activate the star 
         
-        if ($scope.user.getStars().lastIndexOf(news_id) > -1) {
+        if (userAPI.getStars().lastIndexOf(news_id) > -1) {
             var btn = getBtnElem(news_id)
             btn.addClass('active');
         }

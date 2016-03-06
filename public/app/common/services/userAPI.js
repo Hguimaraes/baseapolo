@@ -1,21 +1,21 @@
 angular.module('baseapolo').factory('userAPI', function () {
 
-    var user = {};
+    var userAPI = {};
 
-    user.getName = function () {
+    userAPI.getName = function () {
         return 'username';
     };
 
-    user.setName = function (name) {
+    userAPI.setName = function (name) {
         // Send the request to the server
     };
 
-    user.getEmail = function () {
+    userAPI.getEmail = function () {
         // Send the request to the server
         return 'email@email.com'
     };
 
-    user.getStars = function () {
+    userAPI.getStars = function () {
         // Get the list of ids the user has given a star
         return [
             '123',
@@ -26,15 +26,39 @@ angular.module('baseapolo').factory('userAPI', function () {
         ];
     };
 
-    user.setStar = function (id) {
+    userAPI.setStar = function (id) {
         // Send the request to the server
         console.log("star id " + id);
     };
 
-    user.unStar = function (id) {
+    userAPI.unStar = function (id) {
         // Removes the star
         console.log("unstar id " + id);
     };
 
-    return user;
+    userAPI.getCreations = function () {
+        // Get a list of user's creations
+        return ['2', '5'];
+    }
+
+    userAPI.getUserData = function () {
+        // Get all the user data
+        return {
+            name: 'username',
+            email: 'email@email.com',
+            stars: [
+                '123',
+                '456',
+                '4',
+                '90',
+                '1'
+            ],
+            creations: [
+                '2',
+                '5'
+            ]
+        }
+    };
+
+    return userAPI;
 });
