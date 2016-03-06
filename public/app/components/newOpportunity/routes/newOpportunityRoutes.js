@@ -15,7 +15,7 @@ angular.module('baseapolo')
             });
 
             $stateProvider
-                .state('root.opportunity', {
+                .state('root.newopportunity', {
                     url: url,
                     views: {
                         '@': {
