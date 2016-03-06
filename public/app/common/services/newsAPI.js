@@ -71,8 +71,14 @@ angular.module('baseapolo').factory('newsAPI', function () {
             "Engenharia Ambiental",
             "Engenharia de Produção",
             "Engenharia Química",
-            "Engenharia de Controle e Automação"
+            "Engenharia de Controle e Automação",
+            "Outro"
         ]
+    };
+    
+    newsAPI.createNews = function (news) {
+        // Send the news to the server
+        console.log("creating " + news);
     }
 
     return newsAPI;

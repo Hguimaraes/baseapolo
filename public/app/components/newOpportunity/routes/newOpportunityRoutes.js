@@ -21,6 +21,9 @@ angular.module('baseapolo')
                         '@': {
                             templateUrl: './app/components/newOpportunity/views/newOpportunity.html',
                             controller: 'newOpportunityCtrl'
+                        },
+                        'categories@root.opportunity': {
+                            templateUrl: './app/components/newOpportunity/views/categories.html'
                         }
                     }
                 })

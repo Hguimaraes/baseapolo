@@ -39,4 +39,10 @@ angular.module('baseapolo')
                 enabled: true,
                 requireBase: false
             });
+        })
+    .run(["$rootScope", "$anchorScroll", function ($rootScope, $anchorScroll) {
+        $rootScope.$on("$locationChangeSuccess", function () {
+            $anchorScroll();
         });
+    }]);
+

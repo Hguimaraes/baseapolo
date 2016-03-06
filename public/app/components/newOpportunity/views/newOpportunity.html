@@ -1,1 +1,32 @@
-newOpportunity
+<div id="new-opportunity" class="scrollspy">
+    <div class="section container">
+        <h3 class="light center">
+            Nova Oportunidade
+        </h3>
+        <div class="row">
+            <form class="col l6 offset-l3 s12 m8 offset-m2">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="ex: Vaga de IC no laboratório xyz" id="opportunity-title" type="text">
+                        <label for="opportunity-title" class="active">Título</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12" ui-view="categories"></div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="opportunity-textarea" placeholder="ex: Procuramos alunos interessados em aprender X, Y e Z. Temos 2 bolsas disponíveis e nosso laboratório fica localizado no bloco H, sala H-xxx."
+                        class="materialize-textarea"></textarea>
+                        <label for="opportunity-textarea" class="active">Descrição</label>
+                    </div>
+                </div>
+                <div class="center-align">
+                    <button class="btn waves-effect waves-light primary-color" type="submit" name="action">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
