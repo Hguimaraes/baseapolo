@@ -4,13 +4,24 @@
         <div class="col s12">
             <ul class="tabs">
                 <li class="tab col s6"><a class="active" href="#account-stars">Seguindo</a></li>
-                <li class="tab col s6"><a href="#account-creations">Minhas oportunidades</a></li>
+                <li class="tab col s6"><a href="#account-creations">Oportunidades</a></li>
             </ul>
         </div>
         <div id="account-stars" class="col s12">
+            <searchbar ng-model="filter"></searchbar>
             <div ui-view="stars"></div>
         </div>
         <div id="account-creations" class="col s12">
+            <div class="row valign-wrapper hide-on-med-and-down">
+                <searchbar class="col s11 valign" ng-model="filter"></searchbar>
+                <button class="col s1 waves-effect valign waves-light btn btn-large primary-color">Criar</button>
+            </div>
+            <div class="row hide-on-large-only">
+                <searchbar class="col s12" ng-model="filter"></searchbar>
+                <div id="account-floating-add-button" class="fixed-action-btn">
+                    <a class="btn-floating btn-large waves-effect waves-light primary-color"><i class="material-icons">add</i></a>
+                </div>
+            </div>
             <div ui-view="creations"></div>
         </div>
     </div>
