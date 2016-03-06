@@ -6,14 +6,16 @@
             </a>
             <a href="#" data-activates="side-user-nav" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a ui-sref="root.userHome" ng-if="!state.isHome()">Início</a></li>
+                <li><a ui-sref="root.userHome">Início</a></li>
                 <li><a ui-sref="root.newopportunity">Criar Oportunidade</a></li>
                 <li><a ui-sref="root.account">Minha Conta</a></li>
+                <li><a ng-click="logout()">Sair</a></li>
             </ul>
             <ul class="side-nav" id="side-user-nav">
-                <li class="no-padding"><a ui-sref="root.userHome" ng-if="!state.isHome()">Início</a></li>
+                <li class="no-padding"><a ui-sref="root.userHome">Início</a></li>
                 <li class="no-padding"><a ui-sref="root.newopportunity">Criar Oportunidade</a></li>
                 <li class="no-padding"><a ui-sref="root.account">Minha Conta</a></li>
+                <li class="no-padding"><a ng-click="logout()">Sair</a></li>
             </ul>
         </div>
     </nav>

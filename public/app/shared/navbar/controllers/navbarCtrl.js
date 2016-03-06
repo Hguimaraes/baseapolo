@@ -8,4 +8,10 @@ angular.module('baseapolo').controller('navbarCtrl', function ($scope, $state, u
         isHome: function () { return $state.is('root.home') || $state.is('root.userHome') },
         isLogin: function () { return $state.is('root.login') }
     }
+    
+    $scope.logout = function () {
+        // Logout
+        userAPI.logout();
+        $state.transitionTo('root.home');
+    }
 });

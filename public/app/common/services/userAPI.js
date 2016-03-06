@@ -59,6 +59,10 @@ angular.module('baseapolo').factory('userAPI', function () {
             ]
         }
     };
+    
+    userAPI.logout = function () {
+        console.log("logout");
+    }
 
     return userAPI;
 });
