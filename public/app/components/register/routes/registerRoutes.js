@@ -7,7 +7,7 @@ angular.module('baseapolo')
             
             $urlRouterProvider.when(url, function($state) {
                 // If the user is authenticated, redirect to home
-                if (authProvider.isLoggedIn()) {
+                if (authProvider.isAuthenticated()) {
                     $state.transitionTo('root.home');
                     return true;
                 }
@@ -17,10 +17,10 @@ angular.module('baseapolo')
             $stateProvider
                 .state('root.register', {
                     url: url,
-                    controller: 'registerCtrl',
                     views: {
                         '@': {
-                            templateUrl: './app/components/register/views/register.html'
+                            templateUrl: './app/components/register/views/register.html',
+                            controller: 'registerCtrl'
                         },
                         'footer@': {
                             template: ''
