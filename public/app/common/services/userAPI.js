@@ -1,6 +1,10 @@
-angular.module('baseapolo').factory('userAPI', function () {
+angular.module('baseapolo').factory('userAPI', function ($http) {
 
     var userAPI = {};
+    
+    userAPI.user = {
+        '_id': ''
+    };
 
     userAPI.getName = function () {
         return 'username';
@@ -59,10 +63,26 @@ angular.module('baseapolo').factory('userAPI', function () {
             ]
         }
     };
-    
+
     userAPI.logout = function () {
         console.log("logout");
-    }
+    };
+
+    userAPI.register = function (user) {
+        var response = $http.post('/register', user);
+
+        response.then(function success(response) {
+            var
+                data = response.data,
+                status = response.status;
+            if (status == 200 && !data.errors) {
+                    userAPI.user['_id'] = data['_id'];
+            }
+        });
+
+        return response;
+
+    };
 
     return userAPI;
 });

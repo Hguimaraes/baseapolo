@@ -6,29 +6,37 @@
         <div class="row">
             <form class="col s12">
                 <div class="row">
+                    <div class="col l6 offset-l3 s12 m8 offset-m2 red white-text center" ng-show="error">
+                        {{error}}
+                    </div>
+                    <div class="col l6 offset-l3 s12 m8 offset-m2 green white-text center" ng-show="success">
+                        {{success}}
+                    </div>
+                </div>
+                <div class="row">
                     <div class="input-field col l6 offset-l3 s12 m8 offset-m2">
-                        <input placeholder="ex: Marceline Abadeer" id="register-name" type="text" class="validate">
+                        <input placeholder="ex: Marceline Abadeer" id="register-name" type="text" class="validate" ng-model="user.name">
                         <label for="register-name" class="active">Nome</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col l6 offset-l3 s12 m8 offset-m2">
-                        <input placeholder="ex: marcy@ooomail.com" id="register-email" type="email" class="validate">
+                        <input placeholder="ex: marcy@ooomail.com" id="register-email" type="email" class="validate" ng-model="user.email">
                         <label for="register-email" data-error="inválido" class="active">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col l6 offset-l3 s12 m8 offset-m2">
-                        <input id="register-password" type="password">
+                        <input id="register-password" type="password" ng-model="user.password">
                         <label for="register-password">Senha</label>
                     </div>
                 </div>
                 <div class="center-align">
-                    <button class="btn waves-effect waves-light primary-color" type="submit" name="action">
+                    <button class="btn waves-effect waves-light primary-color" type="submit" name="action" ng-click="register()">
                         Registrar
                     </button>
                 </div>
             </form>
         </div>
     </div>
-</div>
+</div
