@@ -7,27 +7,60 @@ angular.module('baseapolo').factory('newsAPI', function () {
             return [
                 {
                     _id: '1',
-                    title: 'Title',
-                    author: 'Author',
+                    title: 'Cartometria Digital 3D',
+                    author: 'Flavio Mello',
+                    content: 'Something using fourier, laplace, etc...',
+                    stars: [
+                        'a@email.com',
+                        'b@email.com',
+                        'c@email.com'
+                    ],
+                    starCounter: 3,
+                    creationDate: new Date(),
+                    category: "Engenharia Eletrônica"
+                },
+                {
+                    _id: '2',
+                    title: 'CompSoc',
+                    author: 'Henrique Cukierman',
+                    content: "Projeto de extensão no qual alunos devem desenvolver projetos com aplicações" +
+                    " diretas na comunidade acadêmica da UFRJ.",
+                    stars: [
+                        'hguimaraes@poli.ufrj.br',
+                        'mml@poli.ufrj.br',
+                        'passeri.lucas@poli.ufrj.br'
+                    ],
+                    starCounter: 3,
+                    creationDate: new Date(),
+                    category: "Engenharia de Computação"
+                },
+                {
+                    _id: '3',
+                    title: 'Efeitos visuais em tempo real utilizando GLSL',
+                    author: 'Ricardo Guerra Marroquim',
                     content: 'Content',
                     stars: [
                         'a@email.com',
                         'b@email.com',
                         'c@email.com',
                         'd@email.com',
-                        'e@email.com'
+                        'e@email.com',
+                        'f@email.com',
+                        'g@email.com',
+                        'h@email.com',
+                        'i@email.com',
+                        'j@email.com'
                     ],
-                    starCounter: 5,
+                    starCounter: 10,
                     creationDate: new Date(),
-                    category: "Engenharia Eletrônica"
+                    category: "Engenharia de Computação"
                 },
                 {
                     _id: '42',
                     title: 'A vida, o Universo e tudo mais',
                     author: 'Douglas Adams',
                     content:
-                    "A Vida, o Universo e Tudo Mais é o terceiro livro da série de Douglas Adams, contendo 221 páginas." +
-                    "A série contém 5 livros, e neste livro, Arthur Dent continua sua procura pela questão d'A vida, do universo e tudo mais, porém, dessa vez… na era pré-histórica. Como consequência de uma série de ações, Arthur e Ford Prefect acabam naufragados no planeta Terra pré-histórico. Após alguns anos são convocados por Slartibartfast para salvar o universo, que estaria em perigo porque o Portão que isolava o planeta Krikkit do resto do universo estaria prestes a ser aberto..",
+                    "A Vida, o Universo e Tudo Mais é o terceiro livro da série de Douglas Adams, contendo 221 páginas.",
                     stars: [
                         'a@email.com',
                         'b@email.com',
@@ -99,12 +132,12 @@ angular.module('baseapolo').factory('newsAPI', function () {
         // Send the news to the server
         console.log("creating " + news);
     };
-    
+
     newsAPI.deleteNews = function (id) {
         // Send the delete request
         console.log("deleting " + id);
     }
-    
+
 
     return newsAPI;
 });
