@@ -20,5 +20,13 @@ module.exports = function(app, express, passport) {
 		console.log('Somebody just came to our app!');
 	});
 
+	function isAuthenticated(req, res, next) {
+		if (req.user.authenticated)
+        return next();
+
+		// If it's not logged, redirect to home
+		res.redirect('/');
+	}
+
 	return apiRouter;
 }
