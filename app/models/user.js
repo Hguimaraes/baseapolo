@@ -8,7 +8,7 @@ var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 
 var userSchema = mongoose.Schema({
-    name: { type: String, required: true},
+    name: { type: String, required: true },
     email: { type: String, required: true, index: { unique: true } },
     password: { type: String, required: true, select: false },
     course: String,
@@ -44,6 +44,23 @@ var user_model = mongoose.model('user', userSchema);
 var User = function () {
     this.model = user_model;
 
+    this.find = function (req, res) {
+        var user = this.model.findOne({ 'email': req.body.email }, function (err, user) {
+            if (err) {
+                console.log(err);
+                res.send({ 'error': 'Um erro ocorreu ao fazer a requisição' });
+            } else {
+                if (!user) {
+                    res.send({ 'error': 'Usuário não encontrado' });
+                    console.log('User not found');
+                } else {
+                    res.send(user);
+                    console.log(user);
+                }
+            }
+        });
+    };
+
     this.findAll = function (req, res) {
         var users = this.model.find(function (err, users) {
             res.send(users);
@@ -58,7 +75,7 @@ var User = function () {
                 console.log(err);
                 res.send(err);
             } else {
-                res.send({'_id': new_user._id});
+                res.send({ '_id': new_user._id });
                 console.log('saved');
             }
         });
@@ -67,8 +84,8 @@ var User = function () {
 
 var user = new User();
 
-user.findAll({}, { send: function (doc) { console.log(doc) } });
-
+// user.findAll({}, { send: function (doc) { console.log(doc) } });
+user.find({ 'body': { 'email': 'eu@eu.com' } }, { send: function () { } });
 // user_model.remove({}, function(err){
 //     console.log("Removed all users");
 // });

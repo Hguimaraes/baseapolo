@@ -67,6 +67,7 @@ app.use(express.static(path.join(__dirname, public_folder)));
 var apiRoutes = require('./app/routes/api')(app, express, passport);
 app.use('/api', apiRoutes);
 require('./app/routes/register')(app);
+require('./app/routes/login')(app, passport);
 
 // Send users to front-end
 app.get('*', function(req, res) {
