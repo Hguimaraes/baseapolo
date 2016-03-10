@@ -1,7 +1,7 @@
 angular.module('baseapolo').provider('auth', function () {
     this.isAuthenticated = function () {
         // Request the server if the user if logged in
-        return true;
+        return false;
     }
 
     this.$get = function () {
