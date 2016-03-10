@@ -27,7 +27,7 @@ module.exports = function(app, express, passport) {
 		console.log('Somebody just came to our app!');
 	});
 
-	app.get('/logged', isAuthenticated, function(req, res, next) {
+	app.get('/logged', function(req, res, next) {
     if(!isAuthenticated) {
 			res.send(JSON.stringify({ logged: false }));
 		} else {
