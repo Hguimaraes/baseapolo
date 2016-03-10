@@ -20,6 +20,8 @@ var session 		= require('express-session');
 var config 			= require('./config/config');
 var app 			= express();
 
+var public_folder   = 'public';
+
 // Configuration ====================================================
 
 // use body parser so we can grab information from POST requests
@@ -59,15 +61,16 @@ mongoose.connect(config.db_url, function (err, database){
 });
 
 // Setting port and static path to express
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, public_folder)));
 
 // Routes ===========================================================
 var apiRoutes = require('./app/routes/api')(app, express, passport);
 app.use('/api', apiRoutes);
+require('./app/routes/register')(app);
 
 // Send users to front-end
 app.get('*', function(req, res) {
-	res.sendFile(path.join(__dirname + '/public/index.html'));
+	res.sendFile(path.join(__dirname + '/' + public_folder + '/index.html'));
 });
 
 // Listen ===========================================================
